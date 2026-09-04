@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Insights & Ideas | Orvexa Global Tech Engineering Blog</title>
+  <meta name="description" content="Read software engineering insights, SaaS architecture breakdowns, DevOps guides, and cybersecurity research from Orvexa Global Tech engineers.">
+  <link rel="canonical" href="https://orvexaglobaltech.com/pages/blog.html">
+  <meta name="theme-color" content="#223853">
+
+  <!-- Open Graph / Social Media -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Orvexa Global Tech">
+  <meta property="og:title" content="Insights & Engineering Blog | Orvexa Global Tech">
+  <meta property="og:description" content="Technical breakdowns, enterprise software architecture, DevOps, and cybersecurity updates.">
+  <meta property="og:url" content="https://orvexaglobaltech.com/pages/blog.html">
+  <meta property="og:image" content="https://orvexaglobaltech.com/assets/logo-mark.png">
+  <meta property="og:locale" content="en_US">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@ORVEXA">
+  <meta name="twitter:title" content="Insights & Engineering Blog | Orvexa Global Tech">
+  <meta name="twitter:description" content="Technical breakdowns, enterprise software architecture, DevOps, and cybersecurity updates.">
+  <meta name="twitter:image" content="https://orvexaglobaltech.com/assets/logo-mark.png">
+
+  <link rel="icon" type="image/png" href="../assets/favicon.png">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/animations.css">
+  <link rel="stylesheet" href="../css/responsive.css">
+
+  <!-- Breadcrumb Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://orvexaglobaltech.com/" },
+      { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://orvexaglobaltech.com/pages/blog.html" }
+    ]
+  }
+  </script>
+  <style>
+    .blog-filter-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 36px;
+      justify-content: center;
+    }
+    .blog-filter-btn {
+      padding: 8px 18px;
+      border-radius: var(--radius-pill);
+      border: 1px solid var(--border-subtle);
+      background: #ffffff;
+      color: var(--text-muted);
+      font-family: var(--font-heading);
+      font-weight: 600;
+      font-size: 0.9rem;
+      cursor: pointer;
+      transition: all var(--trans-fast);
+    }
+    .blog-filter-btn:hover, .blog-filter-btn.active {
+      background: var(--color-accent-blue);
+      color: #ffffff;
+      border-color: var(--color-accent-blue);
+      box-shadow: 0 4px 12px rgba(0, 102, 204, 0.25);
+    }
+    .blog-card {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .blog-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 14px;
+      font-size: 0.85rem;
+      color: var(--text-light);
+    }
+    .blog-badge {
+      display: inline-block;
+      padding: 4px 12px;
+      border-radius: var(--radius-pill);
+      background: rgba(0, 180, 216, 0.1);
+      color: var(--color-accent-blue);
+      font-weight: 700;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <header class="navbar on-dark-hero" id="navbar">
+    <div class="container navbar-container">
+      <a href="../index.html" class="nav-brand" aria-label="Orvexa Global Tech Home">
+        <img src="../assets/logo-mark.png" alt="Orvexa Global Tech Logo">
+      </a>
+      <nav aria-label="Primary Navigation">
+        <ul class="nav-menu">
+          <li class="nav-item"><a href="../index.html" class="nav-link">Home</a></li>
+          <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+          <li class="nav-item"><a href="services.html" class="nav-link">Services</a></li>
+          <li class="nav-item"><a href="products.html" class="nav-link">Products</a></li>
+          <li class="nav-item"><a href="solutions.html" class="nav-link">Solutions</a></li>
+          <li class="nav-item"><a href="portfolio.html" class="nav-link">Portfolio</a></li>
+          <li class="nav-item"><a href="careers.html" class="nav-link">Careers</a></li>
+          <li class="nav-item"><a href="blog.html" class="nav-link active">Blog</a></li>
+          <li class="nav-item nav-menu-cta"><a href="contact.html" class="btn btn-primary btn-sm">Contact Us</a></li>
+        </ul>
+      </nav>
+      <div class="nav-actions">
+        <a href="contact.html" class="btn btn-primary btn-sm">Contact Us</a>
+        <button class="hamburger" aria-label="Toggle navigation menu"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Page Hero -->
+  <section class="page-hero">
+    <div class="container reveal">
+      <span class="section-badge">Thought Leadership</span>
+      <h1>Insights & Ideas</h1>
+      <p>Perspectives on software architecture, artificial intelligence, SaaS engineering, cloud scalability, and the digital economy.</p>
+      <div class="breadcrumb">
+        <a href="../index.html">Home</a>
+        <span class="divider">/</span>
+        <span>Blog</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Blog Listing & Filtering Section -->
+  <section class="section">
+    <div class="container">
+      
+      <!-- Search Input -->
+      <div style="max-width: 500px; margin: 0 auto 30px;" class="reveal">
+        <input type="text" id="blogSearchInput" class="form-control" placeholder="🔍 Search articles by keyword or topic...">
+      </div>
+
+      <!-- Category Filter Tabs -->
+      <div class="blog-filter-bar reveal">
+        <button class="blog-filter-btn active" data-category="all">All</button>
+        <button class="blog-filter-btn" data-category="technology">Technology</button>
+        <button class="blog-filter-btn" data-category="ai">AI</button>
+        <button class="blog-filter-btn" data-category="software">Software Development</button>
+        <button class="blog-filter-btn" data-category="business">Business</button>
+        <button class="blog-filter-btn" data-category="saas">SaaS</button>
+        <button class="blog-filter-btn" data-category="cybersecurity">Cybersecurity</button>
+        <button class="blog-filter-btn" data-category="cloud">Cloud</button>
+        <button class="blog-filter-btn" data-category="news">Company News</button>
+      </div>
+
+      <!-- Articles Grid -->
+      <div class="grid-3" id="blogGrid">
+        
+        <!-- Article 1: AI -->
+        <article class="card blog-card card-glow-hover reveal delay-100" data-category="ai">
+          <div>
+            <div class="blog-meta">
+              <span class="blog-badge">AI</span>
+              <span>March 2026 • 5 min read</span>
+            </div>
+            <h3 class="card-title blog-title">Architecting Production RAG Systems for Enterprise Scale</h3>
+            <p class="card-text blog-excerpt">How to design retrieval-augmented generation pipelines that maintain sub-100ms vector search latency and eliminate hallucinations.</p>
+          </div>
+          <div style="margin-top: 16px;">
+            <a href="#" class="card-link" onclick="event.preventDefault(); alert('Article reading modal or individual post placeholder.');">Read More →</a>
+          </div>
+        </article>
+
+        <!-- Article 2: SaaS -->
+        <article class="card blog-card card-glow-hover reveal delay-200" data-category="saas">
+          <div>
+            <div class="blog-meta">
+              <span class="blog-badge">SaaS</span>
+              <span>February 2026 • 6 min read</span>
+            </div>
+            <h3 class="card-title blog-title">Multi-Tenant Database Partitioning Strategies in B2B SaaS</h3>
+            <p class="card-text blog-excerpt">A comparative deep dive into shared database pools vs. schema-per-tenant vs. dedicated database topologies for high-growth SaaS.</p>
+          </div>
+          <div style="margin-top: 16px;">
+            <a href="#" class="card-link" onclick="event.preventDefault(); alert('Article reading modal or individual post placeholder.');">Read More →</a>
+          </div>
+        </article>
+
+        <!-- Article 3: Software Development -->
+        <article class="card blog-card card-glow-hover reveal delay-300" data-category="software">
+          <div>
+            <div class="blog-meta">
+              <span class="blog-badge">Software</span>
+              <span>January 2026 • 4 min read</span>
+            </div>
+            <h3 class="card-title blog-title">Building Resilient Distributed Systems with Event-Driven Architecture</h3>
+            <p class="card-text blog-excerpt">Leveraging message brokers like Kafka and RabbitMQ to decouple microservices and safeguard system availability during traffic spikes.</p>
+          </div>
+          <div style="margin-top: 16px;">
+            <a href="#" class="card-link" onclick="event.preventDefault(); alert('Article reading modal or individual post placeholder.');">Read More →</a>
+          </div>
+        </article>
+
+        <!-- Article 4: Cybersecurity -->
+        <article class="card blog-card card-glow-hover reveal delay-100" data-category="cybersecurity">
+          <div>
+            <div class="blog-meta">
+              <span class="blog-badge">Cybersecurity</span>
+              <span>January 2026 • 5 min read</span>
+            </div>
+            <h3 class="card-title blog-title">Zero-Trust Architecture: Securing Modern Cloud APIs</h3>
+            <p class="card-text blog-excerpt">Implementing mutual TLS, granular JWT scopes, and automated anomaly detection to prevent lateral attack vectors.</p>
+          </div>
+          <div style="margin-top: 16px;">
+            <a href="#" class="card-link" onclick="event.preventDefault(); alert('Article reading modal or individual post placeholder.');">Read More →</a>
+          </div>
+        </article>
+
+        <!-- Article 5: Cloud -->
+        <article class="card blog-card card-glow-hover reveal delay-200" data-category="cloud">
+          <div>
+            <div class="blog-meta">
+              <span class="blog-badge">Cloud</span>
+              <span>December 2025 • 4 min read</span>
+            </div>
+            <h3 class="card-title blog-title">Kubernetes vs. Serverless: Choosing the Right Cloud Infrastructure</h3>
+            <p class="card-text blog-excerpt">Evaluating operational overhead, cold start latencies, autoscaling predictability, and cloud bill optimizations.</p>
+          </div>
+          <div style="margin-top: 16px;">
+            <a href="#" class="card-link" onclick="event.preventDefault(); alert('Article reading modal or individual post placeholder.');">Read More →</a>
+          </div>
+        </article>
+
+        <!-- Article 6: Technology -->
+        <article class="card blog-card card-glow-hover reveal delay-300" data-category="technology">
+          <div>
+            <div class="blog-meta">
+              <span class="blog-badge">Technology</span>
+              <span>November 2025 • 5 min read</span>
+            </div>
+            <h3 class="card-title blog-title">The Evolution of Frontend Engineering in the AI Era</h3>
+            <p class="card-text blog-excerpt">How modern micro-frontends, edge computing, and AI-assisted interfaces are transforming user experiences.</p>
+          </div>
+          <div style="margin-top: 16px;">
+            <a href="#" class="card-link" onclick="event.preventDefault(); alert('Article reading modal or individual post placeholder.');">Read More →</a>
+          </div>
+        </article>
+
+        <!-- Article 7: Business -->
+        <article class="card blog-card card-glow-hover reveal delay-100" data-category="business">
+          <div>
+            <div class="blog-meta">
+              <span class="blog-badge">Business</span>
+              <span>October 2025 • 4 min read</span>
+            </div>
+            <h3 class="card-title blog-title">Digital Transformation Roadmap for Mid-Market Enterprises</h3>
+            <p class="card-text blog-excerpt">A pragmatic, risk-mitigated guide to migrating legacy operational workflows into modern automated ecosystems.</p>
+          </div>
+          <div style="margin-top: 16px;">
+            <a href="#" class="card-link" onclick="event.preventDefault(); alert('Article reading modal or individual post placeholder.');">Read More →</a>
+          </div>
+        </article>
+
+        <!-- Article 8: Company News -->
+        <article class="card blog-card card-glow-hover reveal delay-200" data-category="news">
+          <div>
+            <div class="blog-meta">
+              <span class="blog-badge">Company News</span>
+              <span>September 2025 • 3 min read</span>
+            </div>
+            <h3 class="card-title blog-title">Orvexa Global Tech Announces Suite 2.0 Product Upgrades</h3>
+            <p class="card-text blog-excerpt">Introducing upgraded ERP modules, autonomous AI agents, and enterprise compliance certifications across our SaaS portfolio.</p>
+          </div>
+          <div style="margin-top: 16px;">
+            <a href="#" class="card-link" onclick="event.preventDefault(); alert('Article reading modal or individual post placeholder.');">Read More →</a>
+          </div>
+        </article>
+
+      </div>
+
+      <!-- No Results Container -->
+      <div id="noBlogResults" style="display: none; text-align: center; padding: 60px 20px;">
+        <h3>No articles found matching your criteria.</h3>
+        <p style="color: var(--text-muted); margin-top: 8px;">Try searching for different keywords or select a different category filter above.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Newsletter Subscribe CTA -->
+  <section class="section section-soft">
+    <div class="container" style="max-width: 700px; text-align: center;">
+      <span class="section-badge">Stay Ahead</span>
+      <h2>Subscribe to Orvexa Tech Insights</h2>
+      <p style="margin: 16px 0 28px;">Receive monthly deep-dives on systems architecture, AI innovations, and SaaS product strategies directly in your inbox.</p>
+      <form onsubmit="event.preventDefault(); alert('Thank you for subscribing to Orvexa Tech Insights!'); this.reset();" style="display: flex; gap: 12px; flex-wrap: wrap; justify-content: center;">
+        <input type="email" class="form-control" placeholder="Enter your work email" required style="max-width: 380px;">
+        <button type="submit" class="btn btn-primary">Subscribe</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="../assets/logo-mark.png" alt="Orvexa Global Tech Logo">
+          <p class="footer-tagline">"Building Technology. Creating Possibilities."</p>
+          <div class="footer-contact-direct">
+            <p style="font-weight: 700; color: #ffffff; margin-bottom: 2px;">Direct Inquiries:</p>
+            <div>✉️ <a href="mailto:akshyatraj@yahoo.com">akshyatraj@yahoo.com</a> • 📞 <a href="tel:+918260521302">+91 8260521302</a></div>
+            <div>✉️ <a href="mailto:somnath_naik@yahoo.com">somnath_naik@yahoo.com</a> • 📞 <a href="tel:+917606831166">+91 7606831166</a></div>
+            <div>✉️ <a href="mailto:rakeshpradhan221@yahoo.com">rakeshpradhan221@yahoo.com</a> • 📞 <a href="tel:+918260973915">+91 8260973915</a></div>
+          </div>
+          <div class="footer-social">
+            <a href="https://linkedin.com" target="_blank" rel="noopener" class="social-link">In</a>
+            <a href="https://github.com/ORVEXA-GLOBAL-TECH" target="_blank" rel="noopener" class="social-link">Gh</a>
+            <a href="https://x.com" target="_blank" rel="noopener" class="social-link">X</a>
+            <a href="https://instagram.com" target="_blank" rel="noopener" class="social-link">Ig</a>
+            <a href="https://youtube.com" target="_blank" rel="noopener" class="social-link">Yt</a>
+          </div>
+        </div>
+        <div>
+          <h4 class="footer-title">Company</h4>
+          <ul class="footer-links">
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="careers.html">Careers</a></li>
+            <li><a href="blog.html">Blog & Insights</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-title">Services</h4>
+          <ul class="footer-links">
+            <li><a href="services.html">Software Development</a></li>
+            <li><a href="services.html">SaaS Development</a></li>
+            <li><a href="services.html">AI Solutions</a></li>
+            <li><a href="services.html">Enterprise Systems</a></li>
+            <li><a href="services.html">Cloud Platforms</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-title">Resources</h4>
+          <ul class="footer-links">
+            <li><a href="portfolio.html">Case Studies</a></li>
+            <li><a href="products.html">Our Products</a></li>
+            <li><a href="solutions.html">Industry Solutions</a></li>
+            <li><a href="../index.html#faq">FAQ</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-title">Legal</h4>
+          <ul class="footer-links">
+            <li><a href="privacy.html">Privacy Policy</a></li>
+            <li><a href="terms.html">Terms & Conditions</a></li>
+            <li><a href="cookies.html">Cookie Policy</a></li>
+            <li><a href="refund.html">Refund Policy</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© <span class="current-year">2026</span> Orvexa Global Tech. All Rights Reserved.</p>
+        <p>Building Technology. Creating Possibilities.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/navigation.js"></script>
+  <script src="../js/animations.js"></script>
+  <script src="../js/blog.js"></script>
+  <script src="../js/security.js"></script>
+  <script src="../js/main.js"></script>
+</body>
+</html>

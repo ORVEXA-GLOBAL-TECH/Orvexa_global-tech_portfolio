@@ -1,0 +1,8 @@
+# Temporary & scratch scripts
+*.ps1
+
+# OS / Editor files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

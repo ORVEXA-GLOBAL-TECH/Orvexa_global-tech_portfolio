@@ -1,0 +1,209 @@
+/* ==========================================================================
+   ORVEXA GLOBAL TECH - RESPONSIVE STYLES
+   Breakpoints: Desktop (1440px+), Laptop (1024-1439px), Tablet (768-1023px), Mobile (<768px)
+   ========================================================================== */
+
+/* --- Large Desktops (1440px+) --- */
+@media (min-width: 1440px) {
+  :root {
+    --container-max: 1320px;
+  }
+}
+
+/* --- Laptop & Small Desktop (992px to 1199px) --- */
+@media (max-width: 1199px) {
+  .grid-4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .footer-grid {
+    grid-template-columns: 2fr 1fr 1fr;
+  }
+}
+
+/* --- Tablets & Mobile Navigation (Below 992px) --- */
+@media (max-width: 991px) {
+  .nav-menu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 320px;
+    height: 100vh;
+    background: #ffffff;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 100px 32px 40px;
+    box-shadow: -10px 0 30px rgba(0, 0, 0, 0.15);
+    transition: right var(--trans-smooth);
+    z-index: 999;
+    gap: 20px;
+    overflow-y: auto;
+  }
+
+  .nav-menu.active {
+    right: 0;
+  }
+
+  .nav-item {
+    width: 100%;
+  }
+
+  .nav-link {
+    font-size: 1.15rem;
+    display: block;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--border-subtle);
+    color: var(--text-main) !important;
+  }
+
+  .nav-actions .btn {
+    display: none;
+  }
+
+  .nav-menu-cta {
+    display: block;
+    width: 100%;
+    margin-top: 20px;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .grid-3 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .timeline::before {
+    left: 30px;
+  }
+
+  .timeline-step {
+    width: 100%;
+    padding-left: 80px;
+    padding-right: 0;
+    text-align: left !important;
+  }
+
+  .timeline-step:nth-child(even) {
+    left: 0;
+  }
+
+  .timeline-step .timeline-marker {
+    left: 9px !important;
+    right: auto !important;
+  }
+
+  .footer-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px 32px;
+  }
+
+  .footer-brand {
+    grid-column: 1 / -1;
+    max-width: 100%;
+  }
+}
+
+/* --- Mobile Devices (Below 768px) --- */
+@media (max-width: 767px) {
+  .section {
+    padding: 60px 0;
+  }
+
+  .hero {
+    padding: 120px 0 60px;
+    min-height: auto;
+  }
+
+  .hero-title {
+    font-size: 2.2rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.05rem;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .hero-actions .btn {
+    width: 100%;
+  }
+
+  .grid-2, .grid-3, .grid-4 {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .stats-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+
+  .stat-item {
+    padding: 20px 12px;
+  }
+
+  .stat-number {
+    font-size: 2.2rem;
+  }
+
+  .testimonial-card {
+    padding: 30px 20px;
+  }
+
+  .testimonial-text {
+    font-size: 1.05rem;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+
+  .footer-brand {
+    grid-column: auto;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    gap: 14px;
+    text-align: center;
+  }
+
+  .modal-content {
+    padding: 24px;
+  }
+
+  .policy-content {
+    padding: 30px 20px;
+  }
+}
+
+/* --- Extra Small Mobile (Below 480px) --- */
+@media (max-width: 480px) {
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .nav-menu {
+    width: 85%;
+  }
+
+  .btn {
+    padding: 12px 22px;
+    font-size: 0.92rem;
+  }
+
+  .footer-contact-direct > div {
+    flex-wrap: wrap;
+    gap: 4px 6px;
+  }
+}
